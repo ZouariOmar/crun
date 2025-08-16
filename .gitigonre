@@ -1,0 +1,6 @@
+# Igonre `.gitignore`
+.gitignore
+
+# Igonre `bin/` except `bin/release`
+cli/project/bin/
+!cli/project/bin/release
