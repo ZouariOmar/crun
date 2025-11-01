@@ -9,7 +9,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/ZouariOmar/Crun"><img src="doc/Crun.ico" alt="Crun" width="200"></a>
+  <a href="https://github.com/ZouariOmar/Crun"><img src="imgs/Crun.ico" alt="Crun" width="200"></a>
   <br>
   Crun
   <br>
@@ -34,7 +34,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](doc/crun.png)
+![screenshot](imgs/crun.png)
 
 ## Key Features
 
