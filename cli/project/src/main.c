@@ -9,20 +9,18 @@
  */
 
 //? Include prototype declaration part
-#include "../include/Crun.hpp"
+#include "../inc/crun.h"
 
 //? Main function prototype dev part
 
 /**
  * @fn         main(int, const char **)
- * @brief      The main Crun function
+ * @brief      The main `crun` function
  * @param argc int
  * @param argv {const char **}
  * @return     int
  */
 int main(int argc, const char **argv) {
-  Crun crun(argc, argv);
-  if (!crun.generate())
-    crun.notify();
+  __init__();
   return EXIT_SUCCESS;
 }

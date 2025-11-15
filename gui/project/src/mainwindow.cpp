@@ -8,8 +8,8 @@
  */
 
 //? ------------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------------
-#include "../inc/mainwindow.hpp"
-#include "../inc/suAccess.hpp"
+#include "../include/mainwindow.hpp"
+#include "../include/suAccess.hpp"
 
 //? --------------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------------
 

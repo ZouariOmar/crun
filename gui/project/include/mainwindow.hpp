@@ -25,7 +25,7 @@
 //! Testing part
 #include <iostream>
 
-#include "../res/ui_mainWindow.h"
+#include "../ui/ui_mainWindow.h"
 
 //? ------------------------------ STRUCT PROTOTYPE DECLARATION PART ------------------------------
 struct CrunStrut {   //? Crun Structure

@@ -7,9 +7,9 @@
  * @copyright Copyright (c) 2024
  ***************************************************/
 
-#include "../inc/suAccess.hpp"
+#include "../include/suAccess.hpp"
 
-suAccess::suAccess(QWidget* parent)
+suAccess::suAccess(QWidget *parent)
     : QDialog(parent), ui(new Ui::Form), is_access(false) {
   ui->setupUi(this);
 
@@ -38,7 +38,7 @@ void suAccess::on_pushButton_clicked() {
   QString cmd = "echo " + password + " | sudo -S true";
 
   // Create a QProcess to execute the command
-  QProcess* process = new QProcess(this);
+  QProcess *process = new QProcess(this);
   process->start("bash", QStringList() << "-c" << cmd);
 
   // Wait for the process to finish
@@ -48,7 +48,7 @@ void suAccess::on_pushButton_clicked() {
   std::cout << process->exitCode() << std::endl;
   if (!process->exitCode()) {
     is_access = true;
-    close();  // Close the suAccess window
+    close(); // Close the suAccess window
   }
 
   // Show the "Incorrect Password" msg

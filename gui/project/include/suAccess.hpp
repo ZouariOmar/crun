@@ -16,7 +16,7 @@
 #include <qt6/QtCore/QProcess>
 #include <qt6/QtWidgets/QDialog>
 
-#include "../res/ui_suAccess.h"
+#include "../ui/ui_suAccess.h"
 
 namespace Ui {
 class suAccess;

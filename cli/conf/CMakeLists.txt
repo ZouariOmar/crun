@@ -1,28 +1,43 @@
-# Set the cmake min version (current - 3.29.3)
-cmake_minimum_required(VERSION 3.29.3)
+# Set the cmake min version (current - 4.1.2)
+cmake_minimum_required(VERSION 4.1.2)
 
 # Set the project name
-project(crun)
+project(
+  crun
+  DESCRIPTION
+    A-simple-program-to-automate-the-setup-of-new-projects-using-templates-from-cpkg-repo.
+  VERSION 1.4.0
+  HOMEPAGE_URL https://github.com/ZouariOmar/crun
+  LANGUAGES C CXX)
 
 # Set the CMake version
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Set Crun compiler flags
-add_compile_options(-Wall -Wextra)
+# Set compiler flags -- add_compile_options(-Wall -Wextra)
 
 # Generate release product
 set(CMAKE_BUILD_TYPE Release)
 
+# Find packages
+find_package(CURL REQUIRED)
+find_package(cJSON REQUIRED)
+
+# Include packages
+include_directories(${CURL_INCLUDE_DIR} ${CJSON_INCLUDE_DIRS})
+
 # Set sources files
-set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/main.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/Crun.cpp)
+set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/main.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/crun.c)
 
 # Set headers files
 set(HEADERS
-    ${CMAKE_CURRENT_SOURCE_DIR}/../project/include/Crun.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../project/import/Patterns.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../project/import/Color.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/../project/inc/crun.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/../project/common/patterns.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/../project/common/color.h)
 
 # Generate Crun
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+# Link packages after creating the executable
+target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl ${CJSON_LIBRARIES})
